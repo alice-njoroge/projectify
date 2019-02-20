@@ -27,4 +27,13 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Get all projects
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function projects()
+    {
+        return $this->hasMany('App\Project');
+    }
 }
