@@ -15,12 +15,12 @@
         </tr>
         </thead>
         <tbody>
-        @foreach($user->projects as $project)
+        @foreach($projects as $project)
             <tr>
                 <td>{{$project->name}}</td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>{{$project->un_complete_tasks_count}}</td>
+                <td>{{$project->completed_tasks_count}}</td>
+                <td>{{$project->tasks_count}}</td>
                 <td><a href="{{route('projects', ['user_id' => $user->id])}}" class="btn btn-outline-secondary">View Tasks</a> </td>
                 <td><a href="#" class="btn btn-outline-primary">Add Task</a> </td>
             </tr>

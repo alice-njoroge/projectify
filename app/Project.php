@@ -23,4 +23,13 @@ class Project extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+    /**
+     * Get the project tasks
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function tasks()
+    {
+        return $this->hasMany('App\Task');
+    }
 }
