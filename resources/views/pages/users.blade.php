@@ -17,7 +17,7 @@
             <td>{{$user->name}}</td>
             <td>{{$user->email}}</td>
             <td>{{$user->projects_count}}</td>
-            <td><a href="#" class="btn btn-outline-secondary">View Projects</a> </td>
+            <td><a href="{{route('projects', ['user_id' => $user->id])}}" class="btn btn-outline-secondary">View Projects</a> </td>
             <td><a href="#" class="btn btn-outline-primary">Add Project</a> </td>
         </tr>
         @endforeach

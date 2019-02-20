@@ -16,3 +16,5 @@ Route::get('/', function () {
 });
 
 Route::get('/users', 'UsersController@index')->name('users');
+
+Route::get('/users/{user_id}/projects', 'ProjectsController@index')->name('projects');
