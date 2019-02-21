@@ -17,4 +17,8 @@ Route::get('/', function () {
 
 Route::get('/users', 'UsersController@index')->name('users');
 
-Route::get('/users/{user_id}/projects', 'ProjectsController@index')->name('projects');
+Route::prefix('/users/{user_id}/projects')->group(function () {
+    Route::get('/', 'ProjectsController@index')->name('projects');
+    Route::get('/create', 'ProjectsController@create')->name('create_project');
+    Route::post('/store', 'ProjectsController@store')->name('store_projects');
+});
